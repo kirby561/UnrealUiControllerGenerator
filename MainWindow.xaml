@@ -1,0 +1,80 @@
+﻿<Window x:Class="UnrealUiControllerGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UnrealUiControllerGenerator"
+        mc:Ignorable="d"
+        Title="Unreal UI Controller Generator" Height="800" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="500" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Input (copy/paste from unreal hierarchy panel): " />
+        <TextBox Grid.Row="1" Grid.Column="0" Name="_inputTextBox" Background="LightGray" AcceptsReturn="true" TextWrapping="NoWrap" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <GridSplitter HorizontalAlignment="Stretch" Height="5" Grid.Row="2" />
+        <Grid Grid.Row="3" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" CanVerticallyScroll="true" >
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Widget Name: " />
+                    <TextBox Grid.Column="1" Name="_widgetNameText" HorizontalAlignment="Stretch" />
+                </Grid>
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label Content="Widget BP Reference Path: " ToolTip="The path for referencing the widget in the Content folder (Ex: /Game/Editor/UI/WBP_SomeBlueprint)" />
+                    <TextBox Grid.Row="1" Grid.Column="1" Name="_widgetReferencePathText" Margin="15 0 15 0" HorizontalAlignment="Stretch" />
+                </Grid>
+                <Label Margin="5 5 5 0" Content="Controller Type: " />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <RadioButton Grid.Column="1" Name="_windowRadioButton" ToolTip="For controllers that will be shown as their own window (AddToViewport/RemoveFromViewport methods).">Window</RadioButton>
+                    <RadioButton Grid.Column="2" Name="_attachRadioButton" ToolTip="For controllers that will be attached to an existing UUserWidget and should just connect to its UI.">Attach</RadioButton>
+                    <RadioButton Grid.Column="3" Name="_createRadioButton" ToolTip="For controllers that will be used to create the widget and provide access to its UI. This can be useful for creating a bunch of widgets from a template to add to a list of items or something for example..">Create</RadioButton>
+                </Grid>
+                <Grid Margin="5 10 5 5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Output Folder: " />
+                    <TextBox Grid.Column="1" Name="_outputDirectory" HorizontalAlignment="Stretch" />
+                    <Button Grid.Column="2" Name="_directoryButton" Click="OnDirectoryButtonClicked" Margin="5 0 5 0" Content=" ... " MinWidth="75" />
+                </Grid>
+            </StackPanel>
+
+            <Button Grid.Column="0" Grid.Row="1" Name="_createButton" Margin="5" Content="Create" Click="OnCreateButtonClicked" MinWidth="100" MinHeight="35" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+        </Grid>
+
+    </Grid>
+</Window>
