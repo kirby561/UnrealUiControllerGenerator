@@ -12,17 +12,17 @@ class UUserWidget;
 UCLASS()
 class U[WIDGET_NAME] : public UObject {
     GENERATED_BODY()
-	
+    
 public:
     U[WIDGET_NAME]();
-	virtual ~U[WIDGET_NAME]();
-	
+    virtual ~U[WIDGET_NAME]();
+    
     UUserWidget* Create(APlayerController* playerController);
-	
+    
 private: // Properties
     UPROPERTY()
     UClass* _widgetTemplate = nullptr;
-	
+    
     UPROPERTY()
     UUserWidget* _rootWidget = nullptr;
 [PROPERTY_DEFINITION_SECTION]

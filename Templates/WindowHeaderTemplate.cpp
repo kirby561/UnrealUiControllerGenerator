@@ -9,17 +9,17 @@ U[WIDGET_NAME]::U[WIDGET_NAME]() {
 }
 
 U[WIDGET_NAME]::~U[WIDGET_NAME]() {
-	// Nothing to do
+    // Nothing to do
 }
     
 void U[WIDGET_NAME]::AddToViewport(APlayerController* playerController) {
-	_rootWidget = Cast<UUserWidget>(CreateWidget(playerController, _widgetTemplate));
-	
+    _rootWidget = Cast<UUserWidget>(CreateWidget(playerController, _widgetTemplate));
+    
 [FIND_WIDGETS_SECTION]
 
-	_rootWidget->AddToViewport();
+    _rootWidget->AddToViewport();
 }
 
 void U[WIDGET_NAME]::RemoveFromViewport() {
-	_rootWidget->RemoveFromParent();
+    _rootWidget->RemoveFromParent();
 }

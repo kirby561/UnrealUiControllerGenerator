@@ -87,9 +87,9 @@ namespace UnrealUiControllerGenerator {
                 string variableName = widgetDeclaration.VariableName;
                 string firstCharacter = variableName.Substring(0, 1);
                 string memberName = "_" + firstCharacter.ToLower() + variableName.Substring(1);
-                _propertyDefinitionsSection += "\n\tUPROPERTY()\n\t" + className + "* " + memberName + " = nullptr;\n";
+                _propertyDefinitionsSection += "\n    UPROPERTY()\n    " + className + "* " + memberName + " = nullptr;\n";
 
-                String findWidgetStatement = "\t" + memberName + " = Cast<" + className + ">(_rootWidget->WidgetTree->FindWidget(TEXT(\"" + variableName + "\")));\n";
+                String findWidgetStatement = "    " + memberName + " = Cast<" + className + ">(_rootWidget->WidgetTree->FindWidget(TEXT(\"" + variableName + "\")));\n";
                 _findWidgetsSection += findWidgetStatement;
             }
 

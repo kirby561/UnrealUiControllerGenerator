@@ -4,15 +4,15 @@
 [INCLUDES_SECTION]
 
 U[WIDGET_NAME]::U[WIDGET_NAME]() {
-	// Nothing to do
+    // Nothing to do
 }
 
 U[WIDGET_NAME]::~U[WIDGET_NAME]() {
-	// Nothing to do
+    // Nothing to do
 }
 
 void U[WIDGET_NAME]::Attach(UUserWidget* rootWidget) {
-	_rootWidget = rootWidget;
-	
+    _rootWidget = rootWidget;
+    
 [FIND_WIDGETS_SECTION]
 }

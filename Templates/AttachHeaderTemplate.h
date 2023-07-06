@@ -12,13 +12,13 @@ class UUserWidget;
 UCLASS()
 class U[WIDGET_NAME] : public UObject {
     GENERATED_BODY()
-	
+    
 public:
     U[WIDGET_NAME]();
-	virtual ~U[WIDGET_NAME]();
-	
+    virtual ~U[WIDGET_NAME]();
+    
     void Attach(UUserWidget* rootWidget);
-	
+    
 private: // Properties
     UPROPERTY()
     UUserWidget* _rootWidget = nullptr;
