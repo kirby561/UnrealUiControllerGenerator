@@ -1,3 +1,9 @@
+# Deprecated
+
+This app has been replaced by a plugin directly in the Unreal Editor instead:
+
+https://github.com/kirby561/UmgControllerGeneratorPlugin
+
 # Unreal UI Controller Generator
 This is a very simple WPF application that generates a C++ UI controller from a widget blueprint hierarchy in Unreal Engine.
 
